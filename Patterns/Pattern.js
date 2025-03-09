@@ -107,4 +107,48 @@ const WriteStarRight = (n) => {
   console.log(result);
 };
 
-WriteStarRight(6);
+const WriteNumberDecimal = (n) => {
+  let result = "",
+    start = 1;
+
+  for (let i = 0; i < n; i++) {
+    if (i % 2 === 0) {
+      start = 1;
+    } else {
+      start = 0;
+    }
+
+    for (let j = 0; j < i + 1; j++) {
+      result += start + " ";
+      start = 1 - start;
+    }
+
+    result += "\n";
+  }
+
+  console.log(result);
+};
+
+const WriteCatEarNumber = (n) => {
+  let result = "";
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i + 1; j++) {
+      result += j + 1;
+    }
+
+    for (let k = 0; k < 2 * n - 2 * i - 2; k++) {
+      result += " ";
+    }
+
+    for (let l = i + 1; l > 0; l--) {
+      result += l;
+    }
+
+    if (i < n - 1) result += "\n";
+  }
+
+  console.log(result);
+};
+
+WriteCatEarNumber(9);
